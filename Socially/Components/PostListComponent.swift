@@ -12,22 +12,15 @@ struct PostListComponent: View {
     
     var body: some View {
         VStack {
-            ForEach(postData.posts) { post in // Iterate over each post in the data
+            ForEach(postData.posts) { post in
                 PostCardComponent(
-                    profileImg: post.profile_img,
-                    profileName: post.profile_name,
-                    profileId: post.profile_id,
-                    image: post.image,
-                    likeCount: post.like_count,
-                    commentCount: post.comment_count,
-                    viewCount: post.view_count,
-                    description: post.description
+                    post: post
                 )
                 .padding(.top)
             }
             
         }
-        .listStyle(.plain) // Set the list style to plain
+        .listStyle(.plain)
     }
 }
 

@@ -55,11 +55,10 @@ struct HomeView: View {
                             for: .navigationBar)
                 
                 
-                
-                if self.show{
+                if self.show && self.current.image != nil{
                     
                     ZStack{
-                        
+
                         Color.black.edgesIgnoringSafeArea(.all)
                         
                         ZStack(alignment: .topLeading) {
@@ -68,32 +67,45 @@ struct HomeView: View {
                                 
                                 VStack{
                                     
-                                    Image(self.current.image)
+                                    Image(self.current.image!)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                 }
                             }
-                            
+                            LoaderComponent(show: self.$show)
+
                             VStack(spacing: 15){
                                 
-                                LoaderComponent(show: self.$show)
                                 
                                 HStack(spacing: 15){
                                     
-                                    Image(self.current.image)
+                                    Image("icon_back")
                                     .resizable()
-                                    .frame(width: 55, height: 55)
-                                    .clipShape(Circle())
+                                    .frame(width: 40, height: 40)
+                                    
+                                    
                                     
                                     Text(self.current.profile_name)
+                                        .foregroundColor(.white)
+                                    Text(self.current.last_seen)
+                                        .font(.caption)
                                         .foregroundColor(.white)
                                     
                                     Spacer()
                                     
+                                    Image("icon_download")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    
                                 }
-                                .padding(.leading)
+                                .padding()
                             }
-                            .padding(.top)
+                            .background(LinearGradient(
+                                gradient: Gradient(
+                                    colors: [.black.opacity(0.8), .white.opacity(0.0)]),
+                                startPoint: .top,
+                                endPoint: .bottom)
+                            )
                         }
                         
                     }
@@ -114,6 +126,8 @@ struct HomeView: View {
             
 
         }
+        .tint(.white)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
 }

@@ -17,19 +17,17 @@ struct PostCardHeader: View {
             Image(profileImg)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 40, height: 40)
+                .frame(width: 30, height: 30)
                 .clipShape(Circle())
             
             HStack() {
                 Text(profileName)
-                    .font(.title3)
                 Spacer()
                 Text(lastSeen)
                     .font(.footnote)
                     .foregroundColor(.gray)
             }
         }
-        .padding()
     }
 }
 

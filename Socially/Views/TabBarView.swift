@@ -46,10 +46,13 @@ struct TabBarView: View {
         ZStack(alignment: .bottom){
                     TabView(selection: $selectedTab) {
                         HomeView().tag(0)
-                        Text("My state").tag(1)
+                        Text("Discover untouched places").tag(1)
                         ProfileView().tag(2)
                     }
-
+                    .onAppear(){
+                        UITabBar.appearance().backgroundColor = UIColor.white
+                    }
+            
                     ZStack{
                         HStack{
                             ForEach((TabbedItems.allCases), id: \.self){ item in
@@ -71,7 +74,12 @@ struct TabBarView: View {
 }
 
 extension TabBarView{
-    func CustomTabItem(imageName: String, title: String, isActive: Bool) -> some View{
+    
+    func CustomTabItem(
+        imageName: String,
+        title: String,
+        isActive: Bool
+    ) -> some View{
         HStack(spacing: 10){
             Spacer()
             Image(systemName: imageName)
@@ -85,6 +93,7 @@ extension TabBarView{
         .frame(width: .infinity, height: 60)
         .background(.white)
     }
+    
 }
 
 #Preview {

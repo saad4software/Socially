@@ -16,16 +16,16 @@ struct PostModel: Codable, Identifiable {
             case description
             case profile_img
             case profile_name
-            case profile_id
+            case last_seen
         }
         
         var id = UUID()
-        var image: String
+        var image: String?
         var like_count: Int
         var comment_count: Int
         var view_count: Int
         var description: String
         var profile_img: String
         var profile_name: String
-        var profile_id: String
+        var last_seen: String
 }

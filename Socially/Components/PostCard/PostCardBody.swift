@@ -9,24 +9,23 @@ import SwiftUI
 
 struct PostCardBody: View {
     
-    let image: String
-    let likeCount: Int
-    let commentCount: Int
-    let viewCount: Int
-    let description: String
+
+    let post: PostModel
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
                     
-            Image(image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .roundedCorner(20, corners: [.allCorners])
-                    
-            Text(description)
+            if post.image != nil  {
+                Image(post.image!)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .roundedCorner(20, corners: [.allCorners])
+            }
+
+            Text(post.description)
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
-                .font(.callout)
 
             Divider()
             
@@ -34,13 +33,20 @@ struct PostCardBody: View {
                 HStack(spacing: 25) {
                     HStack(spacing: 3) {
                         Image(systemName: "heart")
-                        Text("\(likeCount.formattedString())")
+                        Text("\(post.like_count.formattedString())")
                     }
-                    HStack {
-                        Image(systemName: "text.bubble")
-                        Text("\(commentCount.formattedString())")
-                            
+                    
+                    
+                    
+                    NavigationLink(destination: CommentsView(
+                        selectedPost: post
+                    )) {
+                        HStack {
+                            Image(systemName: "text.bubble")
+                            Text("\(post.comment_count.formattedString())")
+                        }
                     }
+
                 }
                 Spacer()
                 
@@ -53,17 +59,21 @@ struct PostCardBody: View {
                     
                     
         }
-        .padding(.all, 25)
     }
 }
 
 #Preview {
     PostCardBody(
-        image: "user1",
-        likeCount: 12,
-        commentCount: 399,
-        viewCount: 34,
-        description: "long description"
+        post: PostModel(
+            image:"post4",
+            like_count: 12,
+            comment_count: 443,
+            view_count: 65,
+            description: "long description",
+            profile_img: "user1",
+            profile_name: "alex",
+            last_seen: "2d ago"
+        )
     )
 }
 

@@ -9,13 +9,23 @@ import SwiftUI
 
 struct ProfileView: View {
     
-    let gridItems = [GridItem(.fixed(150), spacing: 10, alignment: .leading),
-                         GridItem(.fixed(150), spacing: 10, alignment: .leading),
-                         GridItem(.fixed(150), spacing: 10, alignment: .leading)]
+    let gridColumns = [
+        GridItem(.adaptive(minimum: 150), spacing: 10, alignment: .leading),
+//        GridItem(.adaptive(minimum: 150), spacing: 10, alignment: .leading),
+//        GridItem(.adaptive(minimum: 150), spacing: 10, alignment: .leading),
+//        GridItem(.adaptive(minimum: 150), spacing: 10, alignment: .leading),
+//        GridItem(.adaptive(minimum: 150), spacing: 10, alignment: .leading),
+//        GridItem(.adaptive(minimum: 150), spacing: 10, alignment: .leading),
+    ]
+    
+    let images = ["post1", "post2", "post3", "post4", "post5", "post6"]
 
     var body: some View {
         NavigationView {
             ScrollView {
+                
+                
+                
                 VStack {
                     Image("user1")
                         .resizable()
@@ -26,33 +36,40 @@ struct ProfileView: View {
                         .font(.title3)
                     
                     
-                    LazyVGrid(columns: gridItems, spacing: 10) {
-                            ForEach(0..<9) { g in
+                    HStack {
+                        Image("icon_arrow_back")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                        Text("Explore")
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        VStack {
+                            ForEach(0..<3) { g in
                                 
-//                                Text("H:\(g)")
-//                                    .frame(width: g == 4 ? 310 : 150, height: g == 4 ? 310 : 150)
-//                                    .background(Image("user4"))
-//                                    .frame(height: 150, alignment: .top)
-                                Image("user4")
+                                Image(images[g])
                                     .resizable()
-                                    .frame(
-                                        width: g == 4 ? 300 : 150,
-                                        height: g == 4 ? 300 : 150
-                                    )
-                                    .aspectRatio(contentMode: .fill)
+                                    .scaledToFit()
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
                                     
-                                if g == 4 {
-                                    Color.clear
-                                }
-                                if g == 5 {
-                                    Group {
-                                        Color.clear
-                                        Color.clear
-                                    }
-                                }
                             }
+                            Spacer()
                         }
-                        .frame(width: 470)
+                        VStack {
+                            ForEach(3..<6) { g in
+                                
+                                Image(images[g])
+                                    .resizable()
+                                    .scaledToFit()
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    
+                            }
+                            Spacer()
+                        }
+                    }
+                    
+
                 }
                 .padding()
             }
@@ -68,8 +85,9 @@ struct ProfileView: View {
                                 .foregroundColor(.black)
                         }
                     }
-                    .toolbarBackground(.visible, for: .navigationBar)
+
         }
+        .navigationViewStyle(StackNavigationViewStyle())
         
         
     }

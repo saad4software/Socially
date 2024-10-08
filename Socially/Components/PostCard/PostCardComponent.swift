@@ -8,47 +8,44 @@
 import SwiftUI
 
 struct PostCardComponent: View {
-    let profileImg: String
-    let profileName: String
-    let profileId: String
     
-    let image: String
-    let likeCount: Int
-    let commentCount: Int
-    let viewCount: Int
-    let description: String
+    let post:PostModel
+
 
     var body: some View {
         VStack {
             PostCardHeader(
-                profileImg: profileImg,
-                profileName: profileName,
-                lastSeen: profileId
+                profileImg: post.profile_img,
+                profileName: post.profile_name,
+                lastSeen: post.last_seen
             )
             
             PostCardBody(
-                image: image,
-                likeCount: likeCount,
-                commentCount: commentCount,
-                viewCount: viewCount,
-                description: description
+                post: post
             )
         }
-        .background(Color.white)
+        .padding()
+        .background(.white)
         .clipShape(RoundedCorner(radius: 10))
+        
 
     }
 }
 
 #Preview {
+    
+    
+    
     PostCardComponent(
-        profileImg: "user3",
-        profileName: "Alex",
-        profileId: "2d ago",
-        image: "user4",
-        likeCount: 23,
-        commentCount: 2,
-        viewCount: 44,
-        description: "long desc"
+        post: PostModel(
+            image: "post1", 
+            like_count: 12,
+            comment_count: 443,
+            view_count: 65,
+            description: "long description",
+            profile_img: "user1",
+            profile_name: "alex",
+            last_seen: "2d ago"
+        )
     )
 }

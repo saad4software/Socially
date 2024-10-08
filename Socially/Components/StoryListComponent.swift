@@ -23,6 +23,7 @@ struct StoryListComponent: View {
                         }
                 }
             }
+            .frame(height: 65)
             
         }
         .clipShape(RoundedCorner(radius: 20))

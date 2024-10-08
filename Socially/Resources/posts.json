@@ -1,43 +1,43 @@
 [
   {
-    "image": "user1",
+    "image": "post1",
     "like_count": 50,
     "comment_count": 12,
     "view_count": 1200,
     "description": "Learn the basics of Python programming!",
     "profile_img": "user1",
     "profile_name": "Gabrial Micheal",
-    "profile_id": "1m ago"
+    "last_seen": "1m ago"
   },
   {
-    "image": "user2",
+    "image": "post2",
     "like_count": 80,
     "comment_count": 15,
     "view_count": 1500,
     "description": "Discover the latest JavaScript frameworks!",
     "profile_img": "user2",
     "profile_name": "Micheal Gabrial",
-    "profile_id": "2d ago"
+    "last_seen": "2d ago"
   },
   {
-    "image": "user3",
+    "image": "post3",
     "like_count": 120,
     "comment_count": 25,
     "view_count": 2000,
     "description": "Explore machine learning algorithms in R!",
-    "profile_img": "bear",
+    "profile_img": "user3",
     "profile_name": "David Adem",
-    "profile_id": "3d ago"
+    "last_seen": "3d ago"
   },
   {
-    "image": "post4",
+    "image": null,
     "like_count": 70,
     "comment_count": 18,
     "view_count": 1400,
     "description": "Tips for optimizing your SQL queries!",
-    "profile_img": "user3",
+    "profile_img": "user4",
     "profile_name": "Adem David",
-    "profile_id": "2h"
+    "last_seen": "2h"
   },
   {
     "image": "post5",
@@ -45,9 +45,9 @@
     "comment_count": 18,
     "view_count": 1400,
     "description": "Tips for optimizing your SQL queries!",
-    "profile_img": "cat2",
+    "profile_img": "user5",
     "profile_name": "Mohammad Gabrial",
-    "profile_id": "5h"
+    "last_seen": "5h"
   },
   {
     "image": "post6",
@@ -55,48 +55,8 @@
     "comment_count": 20,
     "view_count": 1800,
     "description": "Introduction to data structures in C++!",
-    "profile_img": "cat",
+    "profile_img": "user6",
     "profile_name": "Gabrial David",
-    "profile_id": "gabrial_micheal"
-  },
-  {
-    "image": "post7",
-    "like_count": 60,
-    "comment_count": 14,
-    "view_count": 1300,
-    "description": "Build a RESTful API using Node.js and Express!",
-    "profile_img": "bear",
-    "profile_name": "Adam Mohammad",
-    "profile_id": "gabrial_micheal"
-  },
-  {
-    "image": "post8",
-    "like_count": 100,
-    "comment_count": 22,
-    "view_count": 2200,
-    "description": "Introduction to object-oriented programming concepts!",
-    "profile_img": "deer",
-    "profile_name": "David Micheal",
-    "profile_id": "gabrial_micheal"
-  },
-  {
-    "image": "post9",
-    "like_count": 75,
-    "comment_count": 16,
-    "view_count": 1600,
-    "description": "Exploring the world of front-end web development!",
-    "profile_img": "cat2",
-    "profile_name": "Adam Adam",
-    "profile_id": "gabrial_micheal"
-  },
-  {
-    "image": "post10",
-    "like_count": 110,
-    "comment_count": 30,
-    "view_count": 2400,
-    "description": "Mastering algorithms and data structures in Java!",
-    "profile_img": "cat",
-    "profile_name": "Gabrial Adam",
-    "profile_id": "gabrial_micheal"
+    "last_seen": "3h"
   }
 ]

@@ -20,7 +20,7 @@ struct LoaderComponent: View {
             
             Rectangle()
                 .fill(Color.white.opacity(0.6))
-                .frame(height: 3)
+                .frame(height: 5)
             
             Rectangle()
                 .fill(Color.white)
